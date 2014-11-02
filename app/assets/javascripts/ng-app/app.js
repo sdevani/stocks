@@ -1,6 +1,7 @@
 var app = angular.module('stockApp', [
   'ui.router',
-  'templates'
+  'templates',
+  'mm.foundation'
 ]);
 
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
@@ -12,6 +13,4 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     });
 
     $urlRouterProvider.otherwise('/');
-
-    $locationProvider.html5Mode(true);
 });
