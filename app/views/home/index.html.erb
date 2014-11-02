@@ -1,6 +1,6 @@
 <h1>Hello World</h1>
 <a href="/auth/google_oauth2">Log In</a>
 
-<% if @info %>
-  <%= @info %>
+<% if flash[:notice] %>
+  <%= flash[:notice] %>
 <% end %>

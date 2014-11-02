@@ -1,5 +1,13 @@
 source 'https://rubygems.org'
 
+group :test do
+  gem 'rspec-rails'
+end
+
+group :test, :development do
+  gem 'pry-debugger'
+end
+
 gem "omniauth-google-oauth2"
 
 gem "figaro"
