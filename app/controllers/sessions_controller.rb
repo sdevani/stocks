@@ -4,8 +4,13 @@ class SessionsController < ApplicationController
     if user.nil?
       redirect_to "/", notice: "Could not log in"
     else
-      session[:user_id] = user.id
+      log_in_user(user)
       redirect_to "/", notice: "Logged in #{user.id}"
     end
+  end
+
+  def destroy
+    log_out_user
+    redirect_to "/", notice: "You've been logged out."
   end
 end
