@@ -18,3 +18,4 @@
 # Ignore application configuration
 /config/application.yml
 vendor/assets/components/
+vendor/assets/bower_components/
