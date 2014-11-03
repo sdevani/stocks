@@ -28,6 +28,10 @@ describe User do
       expect(User.count).to eq(old_user_count + 1)
     end
 
+    it "is not a guest user" do
+      expect(user.guest).to eq(false)
+    end
+
     it "retrieves other attributes from omniauth params" do
       expect(user.full_name).to eq(params["info"]["name"])
       expect(user.first_name).to eq(params["info"]["first_name"])
@@ -42,6 +46,18 @@ describe User do
       new_user = User.get_omniauth_user({omniauth_params: params})
       expect(User.count).to eq(old_user_count)
       expect(new_user.id).to eq(user.id)
+    end
+  end
+
+  describe "#get_guest_user" do
+    let(:user) {User.get_guest_user}
+
+    it "returns a guest user" do
+      expect(user).to be_a(User)
+    end
+
+    it "sets guest to true" do
+      expect(user.guest).to eq(true)
     end
   end
 end

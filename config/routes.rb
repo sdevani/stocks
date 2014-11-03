@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'auth/google_oauth2/callback' => "sessions#create"
   get '/logout' => "sessions#destroy"
+
+  scope :api, defaults: {format: :json} do
+    get '/current-user' => "users#show"
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
