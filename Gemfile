@@ -11,7 +11,7 @@ group :test do
 end
 
 group :test, :development do
-  gem 'pry-debugger'
+  gem 'pry-byebug'
 end
 
 gem "omniauth-google-oauth2"
