@@ -6,8 +6,8 @@
   <section class="top-bar-section">
     <ul class="right">
       <li class="active"><a href="#">Home</a></li>
-      <li><a href="/auth/google_oauth2">Log In</a></li>
-      <li><a href="/logout">Log Out</a></li>
+      <li ng-show="user.guest"><a href="/auth/google_oauth2">Log In</a></li>
+      <li ng-hide="user.guest"><a href="/logout">Log Out {{user.first_name}}</a></li>
     </ul>
   </section>
 </nav>

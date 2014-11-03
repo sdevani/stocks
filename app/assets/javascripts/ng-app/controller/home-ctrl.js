@@ -1,4 +1,3 @@
-;
-app.controller('HomeCtrl', ['$scope', function($scope) {
-  $scope.user = {name: "Shehzan"};
+app.controller('HomeCtrl', ['$scope',
+  function($scope) {
 }]);
