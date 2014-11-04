@@ -31,6 +31,8 @@ GEM
       railties (>= 3.1)
       sprockets
       tilt
+    angular_rails_csrf (1.0.2)
+      rails (>= 3, < 5)
     arel (5.0.1.20140414130214)
     bower-rails (0.9.1)
     builder (3.2.2)
@@ -175,6 +177,7 @@ PLATFORMS
 
 DEPENDENCIES
   angular-rails-templates
+  angular_rails_csrf
   bower-rails
   coffee-rails (~> 4.0.0)
   figaro

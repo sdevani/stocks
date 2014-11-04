@@ -1,5 +1,13 @@
-<h1>Hello {{user.name}}</h1>
-<a href="/logout">Log Out</a>
+<div ng-show="portfolios.length">
+  <h1>Your Portfolios</h1>
+  <div ng-repeat="portfolio in portfolios">
+    <h3>Name: {{portfolio.nickname}}</h3>
+    <p>Amount: {{portfolio.cash_balance}}</p>
+  </div>
+</div>
 
-<h1>Hello World</h1>
-<a href="/auth/google_oauth2">Log In</a>
+<div ng-show="isSignedIn">
+  <h2>Create a Portfolio</h2>
+  <label>New Portfolio Name:</label><input type="text" ng-model="newPortfolio.nickname">
+  <button ng-click="createPortfolio()">Create it!</button>
+</div>

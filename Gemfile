@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'angular_rails_csrf'
+
 gem 'foundation-rails'
 gem 'bower-rails'
 gem 'angular-rails-templates'
