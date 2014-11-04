@@ -11,11 +11,13 @@ class AddRemoveMoneyFromPortfolio < TransactionScript
       return failure("Given user does not own the portfolio")
     end
 
-    if params[:change_in_balance].nil?
+    change_in_balance = params[:change_in_balance]
+
+    if change_in_balance.nil?
       return failure("Need monetary amount to withdraw or deposit")
     end
 
-    new_cash_balance = portfolio.cash_balance + params[:change_in_balance]
+    new_cash_balance = portfolio.cash_balance + change_in_balance.to_d
 
     if new_cash_balance < 0
       return failure("Can't withdraw more money than you have")
